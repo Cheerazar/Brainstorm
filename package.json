@@ -8,8 +8,7 @@
   "main": "server.js",
   "scripts": {
     "test": "node server.js& ./node_modules/.bin/mocha --bail --reporter nyan specs/server/ServerSpec.js; pkill -n node;",
-    "start": "node ./bin/www",
-    "postinstall": "bower install"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
