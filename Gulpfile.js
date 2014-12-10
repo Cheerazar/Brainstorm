@@ -79,7 +79,7 @@ gulp.task('usemin', ['jsx', 'clearProd'], function () {
 });
 
 gulp.task('production', ['usemin'], function () {
-  nodemon({script: 'productionIndex.js', ignore: 'node_modules/**/*.js'});
+  nodemon({script: './bin/www', ignore: 'node_modules/**/*.js'});
 });
 
 gulp.task('default', ['start']);
