@@ -6,7 +6,7 @@ var session = require('express-session');
 
 module.exports = function(app) {
   app.use(session({
-    secret: 'hackReactorStudentsAreAwesome',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true
   }));
@@ -37,8 +37,8 @@ module.exports = function(app) {
 
   var GitHubStrategy = require('passport-github').Strategy;
   passport.use(new GitHubStrategy({
-      clientID: '4e0e24f94e07e2e2d1c9',
-      clientSecret: 'c5a5d8a6c39396e0292e21267e4b8fc7aebf3bfe',
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       callbackURL: process.env.AUTH_CALLBACK
     },
     function(accessToken, refreshToken, profile, done) {
